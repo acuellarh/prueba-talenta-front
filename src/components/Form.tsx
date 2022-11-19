@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "../assets/scss/form.scss";
+import Swal from "sweetalert2";
 
 export const Form = ()=> {
 
@@ -15,13 +16,19 @@ export const Form = ()=> {
   };
   
   const handleSubmit = (e:React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault(); 
-    if(addText) {
-      const newTextForm = addText
-      console.log(newTextForm)
-    }
-    resetForm()
+    e.preventDefault();
+    if(addText.length < 6) {
+      Swal.fire({
+        icon: "info",
+        title: "El texto debe tener mas de 6 caracteres"
+      })
+    }   
+    const newTextForm = addText
+    console.log(newTextForm)
+      
+    resetForm();
   };
+
   return(
     <section className="form">
       <h1 className="form__title">Ingresa un Texto</h1>
