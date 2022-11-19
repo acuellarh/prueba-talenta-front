@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "../assets/scss/form.scss";
 
 export const Form = ()=> {
 
@@ -22,18 +23,19 @@ export const Form = ()=> {
     resetForm()
   };
   return(
-    <section>
-      <form onSubmit={handleSubmit} className='form'>
+    <section className="form">
+      <h1 className="form__title">Ingresa un Texto</h1>
+      <form onSubmit={handleSubmit} className="form">
         <div>
           <textarea
-            className='form__input'          
-            name='addText'
+            className="form__textarea"          
+            name="addText"            
             value={addText}
-            placeholder='Ingresa un texto'
+            placeholder="Ingresa un texto"
             onChange={handleAddText}           
           />
 				</div>
-          <button className='form__button' type='submit'>
+          <button className="form__button" type="submit">
 					Enviar
 				  </button>
 			</form>
