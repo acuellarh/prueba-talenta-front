@@ -5,12 +5,14 @@ const create = (data: InfoTexts) => {
   return http.post<InfoTexts>("/infoTexts/", data);
 };
 
-
-
+const getAll = () => {
+  return http.get<Array<InfoTexts>>("/infoTexts/")
+};
 
 
 const formService = {
-  create
+  create,
+  getAll
 }
 
 export default formService
