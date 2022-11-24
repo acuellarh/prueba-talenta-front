@@ -12,7 +12,7 @@
 }
 
 .form__title {
-  margin-top: 3rem;
+  margin-top: 2rem;
   margin-bottom: 1rem;
   text-align: center;
 }
@@ -34,6 +34,16 @@
   margin: 1rem;
   padding: 1rem;
   width: 30%;
+}
+
+.form__list {  
+  text-align: center;  
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
 }
 
 
