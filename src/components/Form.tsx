@@ -1,6 +1,8 @@
 import { useState } from "react";
 import "../assets/scss/form.scss";
 import Swal from "sweetalert2";
+import formService from "../services/formService";
+// import { InfoTexts } from "../types/app";
 
 export const Form = ()=> {
 
@@ -12,7 +14,7 @@ export const Form = ()=> {
   };
   
   const resetForm = () => {
-    setAddText("")    
+    setAddText("")   
   };
   
   const handleSubmit = (e:React.FormEvent<HTMLFormElement>) => {
@@ -22,12 +24,21 @@ export const Form = ()=> {
         icon: "info",
         title: "El texto debe tener mas de 6 caracteres"
       })
-    }   
-    const newTextForm = addText
-    console.log(newTextForm)
+    }
+    
+    createText()   
       
     resetForm();
   };
+
+  const createText = async()=>{  
+
+    const newObjectText = {
+      dataText: addText
+    }
+    const { data } = await formService.create(newObjectText) 
+    console.log(data) 
+  }
 
   return(
     <section className="form">
