@@ -77,7 +77,7 @@ export const Form = ( )=> {
       </section>
       <section className="form__list">
         <h2 className="form__title">Listado de textos</h2>
-          <ul>
+          <ul className="form__ul">
             {
               dataApi.map(( { id, dataText } )=> {
                 return (

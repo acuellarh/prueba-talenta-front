@@ -12,8 +12,8 @@
 }
 
 .form__title {
-  margin-top: 2rem;
-  margin-bottom: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
   text-align: center;
 }
 
@@ -41,9 +41,15 @@
 }
 
 ul {
+  text-align: left;
   list-style: none;
-  padding: 0;
-  margin: 20px 0;
+  padding: 1rem;
+  margin: 10px 0;  
+}
+
+ul li::before {
+  content: "📌";  
+  margin-right: 0.5rem;
 }
 
 

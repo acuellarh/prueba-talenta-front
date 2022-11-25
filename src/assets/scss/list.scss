@@ -7,16 +7,35 @@
   padding: 0;
 }
 
+.button {
+  margin-left: 0.5rem;
+  padding: 0.2rem;
+  border-radius: 0.3rem;
+  color: white  
+}
 
-ul {
-  list-style: none;
-  padding: 0;
-  margin: 20px 0;
+.button__delete {
+  background-color: red;
+  border-color: red;
 
-  li {
-    display: block;
-    line-height: 34px;
-    font-size: 14px;
-    color: $color-text;
-  }
+}
+
+.button__edit {
+  background-color: blue;
+  border-color: blue;
+}
+
+
+li {  
+  padding: 0.2rem;
+  margin: auto;
+  width: 40%;  
 } 
+
+@include media-up(desktop) {
+  .li {
+    width: 25%;
+  }
+
+}
+
