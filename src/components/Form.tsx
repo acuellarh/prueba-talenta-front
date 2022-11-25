@@ -27,8 +27,7 @@ export const Form = ( )=> {
       })
     }
     
-    createText()   
-      
+    createText();
     resetForm();
   };
 
