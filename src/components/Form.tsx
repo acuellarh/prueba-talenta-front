@@ -9,7 +9,6 @@ export const Form = ( )=> {
 
   const [addText, setAddText] = useState<string>("");
   const [dataApi, setDataApi] = useState<Array<InfoTexts>>([]);
-
   
   const handleAddText = (e:React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setAddText(e.target.value)  
@@ -34,10 +33,10 @@ export const Form = ( )=> {
   };
 
   const createText = async()=>{ 
+
     const newObjectText = {
       dataText: addText
-    }
-    
+    }    
     const response = await formService.create(newObjectText)
     const { status } = response
     if( status === 200) {
@@ -79,11 +78,11 @@ export const Form = ( )=> {
         <h2 className="form__title">Listado de textos</h2>
           <ul className="form__ul">
             {
-              dataApi.map(( { id, dataText } )=> {
+              dataApi?.map(( { id, dataText } )=> {
                 return (
                   <List
                     key={id}
-                    dataText={dataText}                 
+                    dataText={dataText}                                                                                          
                   />    
                 )
               })

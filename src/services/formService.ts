@@ -9,10 +9,14 @@ const getAll = () => {
   return http.get<Array<InfoTexts>>("/infoTexts/")
 };
 
+const remove = (id:number) => {
+  return http.delete<number>(`/infoTexts/${id}`)
+};
 
 const formService = {
   create,
-  getAll
+  getAll,
+  remove
 }
 
 export default formService

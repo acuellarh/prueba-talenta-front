@@ -1,5 +1,9 @@
-export interface InfoTexts {
-  id?: any | null,  
+export interface InfoTexts { 
+  id?: number,   
   dataText: string
 }
+
+
+
+
 
